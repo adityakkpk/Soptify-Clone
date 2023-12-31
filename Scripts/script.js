@@ -19,7 +19,7 @@ async function getSongs(){
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
-    let aElms = div.getElementsByTagName('a');
+    let aElms = div.querSelector('.react-directory-truncate a');
     let songs = [];
     for (let index = 0; index < aElms.length; index++) {
         const element = aElms[index];
