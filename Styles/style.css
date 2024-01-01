@@ -38,8 +38,7 @@ html, body {
 }
 
 .library {
-  height: 76vh;
-  min-height: 50vh;
+  height: 75vh;
   position: relative;
   overflow: hidden;
 }
@@ -328,4 +327,82 @@ html, body {
 
 .songinfo, .songtime {
   padding: 0 12px;
+}
+
+@media (max-width:1400px) {
+  .left {
+    background-color: black;
+    position: absolute;
+    left: -120%;
+    z-index: 5;
+    width: 300px;
+    transition:  all 1s ease;
+  }
+
+  .close {
+    display: block;
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+  }
+
+  .library {
+    height: 75vh;
+  }
+
+  .right{
+    width: 100vw;
+    margin: 12px;
+  }
+  
+  .playNow{
+    display: none;
+  }
+
+  .playbar {
+    margin: 15px;
+    font-size: 12px;
+    width: 95vw;
+    right: 0;
+    bottom: 0;
+  }
+
+  .bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .cardContainer {
+    justify-content: space-around;
+    padding-bottom: 70px;
+  }
+
+  .card {
+    width: 250px;
+  }
+
+  .hamburgur {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .songbuttons img {
+    height: 25px;
+}
+}
+
+@media (max-height:700px){
+  .library {
+    height: 70vh;
+  }
+
+  .songList {
+    height: 340px;
+  }
 }
