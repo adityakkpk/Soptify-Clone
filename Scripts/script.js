@@ -15,7 +15,7 @@ function secondsToMinutes(seconds){
 }
 
 async function getSongs(){
-    let a = await fetch('http://127.0.0.1:3000/Video-Day84-SpotifyClone/Songs/');
+    let a = await fetch('https://github.com/adityakkpk/Soptify-Clone/tree/main/Songs/');
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
