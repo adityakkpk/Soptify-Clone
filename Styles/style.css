@@ -397,7 +397,8 @@ html, body {
 
   .right{
     width: 100vw;
-    margin: 12px;
+    height: 100vh;
+    margin: 0;
   }
 
   .play {
@@ -436,7 +437,7 @@ html, body {
 
   .cardContainer {
     justify-content: space-around;
-    padding-bottom: 70px;
+    padding-bottom: 200px;
   }
 
   .card {
@@ -494,9 +495,5 @@ html, body {
 
   .playbar{
     bottom: -15px;
-  }
-
-  .cardContainer {
-    padding-bottom: 200px;
   }
 }
