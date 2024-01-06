@@ -269,6 +269,7 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-left: -100px;
 }
 
 .songbuttons img {
@@ -464,8 +465,38 @@ html, body {
   .songbuttons img {
     height: 25px;
   }
+  
+  .songbuttons {
+    margin-left: 0;
+  }
 
   .songinfo, .songtime {
     width: auto;
+  }
+}
+
+@media (max-width:500px) {
+  .card {
+    width: 350px;
+  }
+
+  .card h2, .card p {
+    font-size: 1rem;
+  }
+  
+  .card p {
+    margin-top: 5px;
+  }
+
+  .log, .sign {
+    font-size: 12px;
+  }
+
+  .playbar{
+    bottom: -15px;
+  }
+
+  .cardContainer {
+    padding-bottom: 200px;
   }
 }

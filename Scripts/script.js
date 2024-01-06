@@ -18,7 +18,7 @@ function secondsToMinutes(seconds){
 
 async function getSongs(folder){
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:3000/${folder}/`);
+    let a = await fetch(`/${folder}/`);
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
@@ -72,7 +72,7 @@ const playMusic = (songName, pause=false) => {
 }
 
 async function displayAlbums () {
-    let a = await fetch(`http://127.0.0.1:3000/Songs/`);
+    let a = await fetch(`/Songs/`);
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
@@ -82,11 +82,11 @@ async function displayAlbums () {
     for (let index = 0; index < array.length; index++) {
         const elem = array[index];
         
-        if(elem.href.includes('/Songs')){
+        if(elem.href.includes('/Songs') && !elem.href.includes('.htaccess')){
             let folderName = elem.href.split('/').slice(-2)[0];
 
             //grt the mete data of folder
-            let a = await fetch(`http://127.0.0.1:3000/Songs/${folderName}/info.json`);
+            let a = await fetch(`/Songs/${folderName}/info.json`);
             let response = await a.json();
             const cardContainer = document.querySelector('.cardContainer')
             cardContainer.innerHTML += `
@@ -114,7 +114,7 @@ async function displayAlbums () {
 }
 
 async function main (){
-    let songs = await getSongs('Songs/Sadabahar');
+    let songs = await getSongs('Songs/P5');
     playMusic(songs[0], true);
 
     //Display all the albums
@@ -178,6 +178,9 @@ async function main (){
     document.querySelector('.range').getElementsByTagName('input')[0]
         .addEventListener('change', (e)=> {
             currentSong.volume = parseInt(e.target.value) / 100;
+            if(currentSong.volume > 0 ){
+                document.querySelector('.volume img').src = document.querySelector('.volume img').src.replace("Images/mute.svg",'Images/volume.svg');
+            }
         });
 
     //mute volume
