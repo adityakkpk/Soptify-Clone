@@ -42,7 +42,7 @@ html, body {
 }
 
 .library {
-  height: calc(100vh - 190px);
+  height: calc(100vh - 180px);
   position: relative;
   overflow: hidden;
 }
@@ -135,12 +135,12 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
+  padding: 5px 20px;
   position: sticky;
   z-index: 4;
   right: 0;
   left: 0;
-  top: -5px;
+  top: 0px;
 }
 
 .hamburgur {
@@ -257,7 +257,8 @@ html, body {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: rgba(195, 195, 195, 0.964);
+  background-color: rgba(195, 195, 195, 0.389);
+  border: 1px solid black;
   width: 70vw;
   padding: 12px;
   filter: invert(1);
@@ -269,7 +270,7 @@ html, body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-left: -100px;
+  margin-left: -165px;
 }
 
 .songbuttons img {
@@ -365,13 +366,19 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   cursor: pointer;
   transition: all 0.5s;
 }
 
+.volume img {
+  width: 25px;
+}
+
 .range input{
   cursor: pointer;
+  width: 100px;
+  margin-top: 5px;
 }
 
 .hide{
@@ -428,16 +435,9 @@ html, body {
     bottom: 0;
   }
 
-  .bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
   .cardContainer {
     justify-content: space-around;
-    padding-bottom: 200px;
+    padding-bottom: 150px;
   }
 
   .card {
@@ -459,30 +459,56 @@ html, body {
     gap: 10px;
   }
 
-  .range input {
-    width: 80px;
-  }
-
   .songbuttons img {
     height: 25px;
   }
   
   .songbuttons {
-    margin-left: 0;
+    margin-left: -20px;
   }
 
-  .songinfo, .songtime {
-    width: auto;
+  .songtime {
+    width: 135px;
+  }
+  
+  .songinfo {
+    width: 185px;
+    padding: 0;
+  }
+
+  .volume img {
+    width: 20px;
+  }
+
+  .range input{
+    width: 60px;
+    margin-bottom: 15px;
+    height: 3px;
   }
 }
 
 @media (max-width:500px) {
+
+  .home ul li {
+    font-size: 12px;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  .songList ul li {
+    padding: 5px;
+    font-size: 12px;
+  }
+
   .card {
-    width: 350px;
+    width: 265px;
+    padding: 12px;
   }
 
   .card h2, .card p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   
   .card p {
@@ -491,9 +517,40 @@ html, body {
 
   .log, .sign {
     font-size: 12px;
+    padding: 8px 16px;
   }
 
   .playbar{
     bottom: -15px;
+    left: -5px;
+    font-size: 12px;
   }
+
+  .songbuttons {
+    margin-left: -15px;
+    gap: 5px;
+  }
+
+  .songtime {
+    width: 80px;
+    padding: 0;
+  }
+  
+  .songinfo {
+    margin-left: -5px;
+    width: 100px;
+    padding: 0;
+  }
+
+  .volume img {
+    width: 15px;
+  }
+
+  .range input{
+    cursor: pointer;
+    width: 50px;
+    height: 3px;
+    margin-bottom: 10px;
+  }
+
 }
